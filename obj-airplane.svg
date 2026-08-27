@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="100%" height="100%">
+  <defs>
+    <filter id="planeShadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="4" dy="8" stdDeviation="6" flood-color="#000000" flood-opacity="0.45"/>
+    </filter>
+    <linearGradient id="fuselage" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="60%" stop-color="#e2e8f0"/>
+      <stop offset="100%" stop-color="#94a3b8"/>
+    </linearGradient>
+    <linearGradient id="wingGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="50%" stop-color="#cbd5e1"/>
+      <stop offset="100%" stop-color="#64748b"/>
+    </linearGradient>
+    <linearGradient id="planeGold" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#d97706"/>
+    </linearGradient>
+    <linearGradient id="cockpit" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#0369a1"/>
+    </linearGradient>
+  </defs>
+
+  <g filter="url(#planeShadow)" transform="rotate(-25 60 60)">
+    <!-- Asa Esquerda (Traseira) -->
+    <path d="M52 50 L12 68 L22 75 L54 62 Z" fill="url(#wingGrad)"/>
+    <!-- Turbina Esquerda -->
+    <rect x="34" y="60" width="8" height="15" rx="3" fill="#475569"/>
+    <ellipse cx="38" cy="60" rx="4" ry="2" fill="url(#planeGold)"/>
+
+    <!-- Asa Direita (Frontal) -->
+    <path d="M68 50 L108 68 L98 75 L66 62 Z" fill="url(#wingGrad)"/>
+    <!-- Turbina Direita -->
+    <rect x="78" y="60" width="8" height="15" rx="3" fill="#475569"/>
+    <ellipse cx="82" cy="60" rx="4" ry="2" fill="url(#planeGold)"/>
+
+    <!-- Estabilizador Horizontal Traseiro (Leme/Cauda) -->
+    <path d="M54 96 L40 106 L45 109 L57 102 Z" fill="url(#wingGrad)"/>
+    <path d="M66 96 L80 106 L75 109 L63 102 Z" fill="url(#wingGrad)"/>
+
+    <!-- Leme Vertical de Cauda com Logo/Dourado -->
+    <path d="M58 82 L58 108 L62 108 L62 82 Z" fill="url(#planeGold)"/>
+    <polygon points="58,84 62,84 60,74" fill="#b45309"/>
+
+    <!-- Fuselagem Central 3D -->
+    <ellipse cx="60" cy="58" rx="11" ry="46" fill="url(#fuselage)"/>
+    
+    <!-- Para-brisa / Cockpit 3D -->
+    <path d="M54 26 Q60 22 66 26 Q64 31 56 31 Z" fill="url(#cockpit)"/>
+    <!-- Janelas de Passageiros com luz -->
+    <circle cx="56" cy="40" r="1.5" fill="#0284c7"/>
+    <circle cx="56" cy="46" r="1.5" fill="#0284c7"/>
+    <circle cx="56" cy="52" r="1.5" fill="#0284c7"/>
+    <circle cx="56" cy="58" r="1.5" fill="#0284c7"/>
+    <circle cx="56" cy="64" r="1.5" fill="#0284c7"/>
+    
+    <circle cx="64" cy="40" r="1.5" fill="#0284c7"/>
+    <circle cx="64" cy="46" r="1.5" fill="#0284c7"/>
+    <circle cx="64" cy="52" r="1.5" fill="#0284c7"/>
+    <circle cx="64" cy="58" r="1.5" fill="#0284c7"/>
+    <circle cx="64" cy="64" r="1.5" fill="#0284c7"/>
+
+    <!-- Faixa Dourada Corporativa da Fuselagem -->
+    <path d="M50 68 Q60 70 70 68" stroke="url(#planeGold)" stroke-width="2.5" fill="none"/>
+    
+    <!-- Brilho de Reflexo na Fuselagem -->
+    <ellipse cx="58" cy="48" rx="3" ry="18" fill="#ffffff" opacity="0.6"/>
+  </g>
+</svg>

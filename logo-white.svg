@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 560" width="100%" height="100%">
+  <defs>
+    <style>
+      .eg-white { fill: #FFFFFF; }
+      .eg-gold { fill: #F5A623; }
+      .eg-bg-dark { fill: #073660; }
+      .eg-text-main { font-family: 'Montserrat', 'Arial Black', sans-serif; font-weight: 900; font-style: italic; }
+      .eg-text-sub { font-family: 'Montserrat', 'Arial', sans-serif; font-weight: 500; font-style: italic; }
+    </style>
+  </defs>
+
+  <!-- Símbolo / Globo / Emblema -->
+  <g transform="translate(50, 10)">
+    <!-- Círculo Base Dourado / Branco -->
+    <circle cx="200" cy="200" r="190" class="eg-white" />
+    
+    <!-- Corte Horizontal Escuro -->
+    <rect x="0" y="193" width="400" height="14" class="eg-bg-dark" />
+    
+    <!-- Arco Interno Escuro Superior -->
+    <path d="M 75 193 A 145 145 0 0 1 345 193 L 325 193 A 125 125 0 0 0 95 193 Z" class="eg-bg-dark" />
+    
+    <!-- Arco Interno Escuro Inferior -->
+    <path d="M 75 207 A 145 145 0 0 0 345 207 L 325 207 A 125 125 0 0 1 95 207 Z" class="eg-bg-dark" />
+
+    <!-- Núcleo Central Branco (Hemisfério Superior) -->
+    <path d="M 95 193 A 125 125 0 0 1 325 193 Z" class="eg-white" />
+
+    <!-- Núcleo Central Branco (Hemisfério Inferior) -->
+    <path d="M 95 207 A 125 125 0 0 0 325 207 Z" class="eg-white" />
+  </g>
+
+  <!-- Tipografia: excellent global ® -->
+  <text x="250" y="475" text-anchor="middle" class="eg-white eg-text-main" font-size="52" letter-spacing="-1.5">
+    excellent global<tspan class="eg-gold" font-size="24" dy="-20">®</tspan>
+  </text>
+
+  <!-- Tipografia: idiomas -->
+  <text x="360" y="525" text-anchor="middle" class="eg-gold eg-text-sub" font-size="38" letter-spacing="0">
+    idiomas
+  </text>
+</svg>

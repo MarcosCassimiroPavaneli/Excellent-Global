@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="100%" height="100%">
+  <defs>
+    <filter id="capShadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="4" dy="8" stdDeviation="6" flood-color="#000000" flood-opacity="0.45"/>
+    </filter>
+    <linearGradient id="capGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="40%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#020617"/>
+    </linearGradient>
+    <linearGradient id="capTop" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#334155"/>
+      <stop offset="50%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="tasselGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef08a"/>
+      <stop offset="50%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#b45309"/>
+    </linearGradient>
+  </defs>
+
+  <g filter="url(#capShadow)" transform="rotate(-6 60 60)">
+    <!-- Base Encaixe da Cabeça (Cúpula inferior) -->
+    <path d="M38 52 Q 60 66 82 52 L 82 66 Q 60 82 38 66 Z" fill="url(#capGrad)"/>
+    <path d="M38 66 Q 60 82 82 66 L 82 72 Q 60 88 38 72 Z" fill="#020617"/>
+
+    <!-- Losango Superior do Capelo (Tampo 3D) -->
+    <!-- Frente, Direita, Traseira, Esquerda -->
+    <polygon points="60,26 108,46 60,64 12,46" fill="url(#capTop)" stroke="#475569" stroke-width="1.2"/>
+    
+    <!-- Espessura da Borda do Losango -->
+    <polygon points="12,46 60,64 60,67 12,49" fill="#0f172a"/>
+    <polygon points="60,64 108,46 108,49 60,67" fill="#020617"/>
+
+    <!-- Botão Central Dourado -->
+    <ellipse cx="60" cy="45" rx="4" ry="2.5" fill="url(#tasselGold)"/>
+
+    <!-- Cordão e Pompom Dourado (Tassel) caindo para o lado esquerdo -->
+    <path d="M60 45 Q 40 43 28 54 Q 22 62 24 76" stroke="url(#tasselGold)" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+    <!-- Pompom Franja Dourada -->
+    <polygon points="21,76 27,76 30,94 18,94" fill="url(#tasselGold)"/>
+    <circle cx="24" cy="76" r="3" fill="#d97706"/>
+    <!-- Fios da franja -->
+    <line x1="20" y1="94" x2="19" y2="98" stroke="#f59e0b" stroke-width="1.5"/>
+    <line x1="24" y1="94" x2="24" y2="99" stroke="#fbbf24" stroke-width="1.5"/>
+    <line x1="28" y1="94" x2="29" y2="98" stroke="#d97706" stroke-width="1.5"/>
+  </g>
+</svg>

@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <style>
+      .eg-blue { fill: #0B538C; }
+      .eg-white { fill: #FFFFFF; }
+      .eg-text-main { font-family: 'Montserrat', 'Arial Black', sans-serif; font-weight: 900; font-style: italic; }
+      .eg-text-sub { font-family: 'Montserrat', 'Arial', sans-serif; font-weight: 500; font-style: italic; }
+    </style>
+  </defs>
+
+  <!-- Símbolo / Globo / Emblema Centralizado -->
+  <g transform="translate(500, 390)">
+    <!-- Círculo Base Azul -->
+    <circle cx="0" cy="0" r="290" class="eg-blue" />
+    
+    <!-- Corte Horizontal Branco -->
+    <rect x="-295" y="-12" width="590" height="24" class="eg-white" />
+    
+    <!-- Arco Interno Branco Superior -->
+    <path d="M -190 -12 A 220 220 0 0 1 220 -12 L 190 -12 A 190 190 0 0 0 -160 -12 Z" class="eg-white" />
+    
+    <!-- Arco Interno Branco Inferior -->
+    <path d="M -190 12 A 220 220 0 0 0 220 12 L 190 12 A 190 190 0 0 1 -160 12 Z" class="eg-white" />
+
+    <!-- Núcleo Central Azul (Hemisfério Superior) -->
+    <path d="M -160 -12 A 190 190 0 0 1 190 -12 Z" class="eg-blue" />
+
+    <!-- Núcleo Central Azul (Hemisfério Inferior) -->
+    <path d="M -160 12 A 190 190 0 0 0 190 12 Z" class="eg-blue" />
+  </g>
+
+  <!-- Tipografia: excellent global ® -->
+  <text x="500" y="800" text-anchor="middle" class="eg-blue eg-text-main" font-size="82" letter-spacing="-2.5">
+    excellent global<tspan font-size="38" dy="-32">®</tspan>
+  </text>
+
+  <!-- Tipografia: idiomas -->
+  <text x="680" y="880" text-anchor="middle" class="eg-blue eg-text-sub" font-size="62" letter-spacing="0">
+    idiomas
+  </text>
+</svg>

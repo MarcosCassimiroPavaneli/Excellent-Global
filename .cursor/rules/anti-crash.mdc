@@ -1,0 +1,34 @@
+---
+description: Regras invioláveis do sistema para contenção de memória, processos e prevenção de travamentos/auto-open
+globs: *
+alwaysApply: true
+---
+
+# PROTOCOLO DE CONTROLE E RESTRIÇÃO DE EXECUÇÃO (ANTI-TRAVAMENTO)
+# REGRAS PERMANENTES E INVIOLÁVEIS DE SISTEMA
+
+[STRICT MODE - PROTEÇÃO CONTRA TRAVAMENTOS E PROCESSOS DESCONTROLADOS]
+
+1. PROIBIÇÃO DE ABERTURA DE NAVEGADORES E JANELAS (NO AUTO-OPEN):
+   - NUNCA execute comandos como `start`, `open`, `explorer` ou lance instâncias com `headless: false`.
+   - NUNCA utilize parâmetros ou flags como `--open`, `-o`, `opn()`, `open: true` em servidores locais (Vite, Webpack, Node, BrowserSync, Live Server).
+   - NUNCA utilize métodos de visualização visual em scripts como `Image.show()`, `cv2.imshow()`, `plt.show()`.
+   - Todo script de processamento de dados/imagem deve operar 100% silencioso/headless, salvando direto em disco.
+
+2. ENTREGA SILENCIOSA E TEXTUAL:
+   - Servidores de desenvolvimento ou visualização devem entregar apenas a URL em formato de texto no terminal (ex: "Servidor rodando em http://localhost:3000"), sem disparar aberturas automáticas.
+   - Todo o ciclo de visualização deve ser mantido restrito a abas que o próprio usuário decida abrir manualmente.
+
+3. CONTENÇÃO DE PROCESSOS, WATCHERS E MEMÓRIA:
+   - Limite a execução de scripts e processos em segundo plano.
+   - Desative hot-reloads infinitos, watchers redundantes ou loops de auto-correção que fiquem disparando recompilações contínuas.
+   - Elimine polling excessivo ou requisições em loop no frontend.
+   - TESTES E SCRAPERS: Todos os scripts com Playwright, Puppeteer ou Selenium DEVEM usar estritamente `headless: true`.
+
+4. GESTÃO DE PORTAS E PROCESSOS ÓRFÃOS:
+   - Antes de iniciar qualquer servidor local, sempre verifique e mate processos órfãos ou portas travadas (ex: porta 3000, 5173, 8080) para evitar sobrecarga de memória RAM e colisões de porta.
+
+5. EXECUÇÃO DETERMINÍSTICA E DIRETA:
+   - Não execute comandos em lote sem autorização explícita.
+   - Faça alterações pontuais apenas nos arquivos estritamente solicitados.
+   - Responda de forma ágil com a confirmação da alteração sem instanciar novos processos desnecessários no sistema operacional.
