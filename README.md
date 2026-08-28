@@ -23,7 +23,6 @@
     <a href="#-metodologia-não-linear--kaizen">Metodologia</a> •
     <a href="#-segurança--hardening">Segurança</a> •
     <a href="#-seo-técnico--lgpd">SEO & LGPD</a> •
-    <a href="#-como-executar-localmente">Executar</a> •
     <a href="#-deploy">Deploy</a>
   </p>
 
@@ -123,26 +122,6 @@ Excellent-Global/
 ├── video-cover.png      # Capa oficial do vídeo institucional
 └── README.md            # Documentação técnica do repositório
 ```
-
----
-
-## 💻 Como Executar Localmente
-
-1. **Clone o repositório:**
-   ```bash
-   git clone https://github.com/MarcosCassimiroPavaneli/Excellent-Global.git
-   cd Excellent-Global
-   ```
-
-2. **Inicie o servidor local:**
-   ```bash
-   node server.js
-   ```
-
-3. **Acesse no seu navegador:**
-   ```text
-   http://localhost:3000
-   ```
 
 ---
 
