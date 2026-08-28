@@ -1,0 +1,10 @@
+{
+  "name": "excellent-global-osasco",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Landing Page Oficial da Excellent Global Idiomas Osasco",
+  "main": "index.html",
+  "scripts": {
+    "start": "node server.js"
+  }
+}
