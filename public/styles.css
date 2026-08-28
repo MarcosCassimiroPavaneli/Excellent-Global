@@ -1,0 +1,439 @@
+/* Estilos Globais e Animações Customizadas - Excellent Global Idiomas Osasco */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  --primary-blue: #0B5C9E;
+  --dark-blue: #073660;
+  --accent-gold: #F5A623;
+  --accent-gold-hover: #E09612;
+  --light-bg: #F8FAFC;
+  --text-dark: #0F172A;
+  --text-muted: #64748B;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+h1, h2, h3, h4, .font-heading {
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Gradiente Hero Azul Mais Claro e Vibrante */
+.bg-hero-gradient {
+  background: radial-gradient(circle at 80% 20%, #38bdf8 0%, #0284c7 35%, #0369a1 70%, #075985 100%);
+}
+
+/* Planeta Esférico 3D do Logo */
+.planet-sphere-container {
+  perspective: 1000px;
+  position: relative;
+}
+
+.planet-sphere {
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #ffffff 0%, #f1f5f9 60%, #cbd5e1 100%);
+  box-shadow: 
+    inset -18px -18px 30px rgba(7, 54, 96, 0.4),
+    inset 10px 10px 20px rgba(255, 255, 255, 0.9),
+    0 20px 45px rgba(2, 132, 199, 0.45),
+    0 0 35px rgba(245, 166, 35, 0.35);
+  position: relative;
+  z-index: 20;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform-style: preserve-3d;
+  animation: planetPulse 6s ease-in-out infinite alternate;
+}
+
+@media (min-width: 640px) {
+  .planet-sphere {
+    width: 310px;
+    height: 310px;
+  }
+}
+
+/* Atmosfera e brilho do planeta */
+.planet-atmosphere {
+  position: absolute;
+  inset: -12px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.25) 60%, rgba(245, 166, 35, 0.4) 90%, transparent 100%);
+  filter: blur(8px);
+  pointer-events: none;
+  animation: atmosphereGlow 4s ease-in-out infinite alternate;
+}
+
+/* Rotação e brilho reflexivo do logo */
+.planet-logo-rotate {
+  width: 68%;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.15));
+  animation: logoSphereSpin 16s ease-in-out infinite;
+}
+
+@keyframes logoSphereSpin {
+  0% { transform: rotate(0deg) scale(1); }
+  25% { transform: rotate(4deg) scale(1.03); }
+  50% { transform: rotate(0deg) scale(1); }
+  75% { transform: rotate(-4deg) scale(1.03); }
+  100% { transform: rotate(0deg) scale(1); }
+}
+
+@keyframes planetPulse {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(1.5deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+@keyframes atmosphereGlow {
+  0% { opacity: 0.6; transform: scale(0.98); }
+  100% { opacity: 1; transform: scale(1.04); }
+}
+
+/* Órbitas 3D e Trilhos de Guia */
+.orbit-track-1 {
+  position: absolute;
+  width: 135%;
+  height: 135%;
+  border-radius: 50%;
+  border: 1.5px dashed rgba(255, 255, 255, 0.35);
+  transform: rotateX(68deg) rotateY(-20deg);
+  pointer-events: none;
+  z-index: 15;
+}
+
+.orbit-track-2 {
+  position: absolute;
+  width: 155%;
+  height: 155%;
+  border-radius: 50%;
+  border: 1.5px dashed rgba(245, 166, 35, 0.45);
+  transform: rotateX(65deg) rotateY(30deg);
+  pointer-events: none;
+  z-index: 15;
+}
+
+/* Container e Itens Orbitais 3D Dinâmicos */
+#dynamic-orbit-container {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.orbit-3d-item {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  pointer-events: auto;
+  cursor: pointer;
+  will-change: transform, opacity;
+  transform-origin: center center;
+}
+
+
+
+.orbit-3d-round-frame {
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 2.5px solid rgba(255, 255, 255, 0.95);
+  box-shadow: 
+    0 12px 28px rgba(0, 0, 0, 0.38),
+    0 0 15px rgba(245, 166, 35, 0.25),
+    inset 0 2px 4px rgba(255, 255, 255, 0.9);
+  overflow: hidden;
+  padding: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+@media (min-width: 640px) {
+  .orbit-3d-round-frame {
+    width: 76px;
+    height: 76px;
+    padding: 3px;
+    border-width: 3px;
+  }
+}
+
+.orbit-3d-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+  filter: contrast(1.05) saturate(1.08);
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.orbit-3d-tooltip {
+  margin-top: 5px;
+  background: rgba(7, 54, 96, 0.92);
+  color: #F8FAFC;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 9999px;
+  border: 1px solid rgba(245, 166, 35, 0.6);
+  white-space: nowrap;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+@media (min-width: 640px) {
+  .orbit-3d-tooltip {
+    font-size: 11px;
+    padding: 3px 10px;
+  }
+}
+
+.orbit-3d-item:hover .orbit-3d-tooltip {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.orbit-3d-item:hover .orbit-3d-round-frame {
+  transform: scale(1.18) rotate(3deg);
+  border-color: #F5A623;
+  box-shadow: 
+    0 16px 36px rgba(245, 166, 35, 0.5),
+    0 0 22px rgba(56, 189, 248, 0.6);
+}
+
+.bg-glass {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.bg-glass-dark {
+  background: rgba(7, 54, 96, 0.75);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(245, 166, 35, 0.2);
+}
+
+.glow-gold {
+  box-shadow: 0 0 25px rgba(245, 166, 35, 0.45);
+}
+
+.glow-gold-hover:hover {
+  box-shadow: 0 10px 30px rgba(245, 166, 35, 0.6);
+  transform: translateY(-2px);
+}
+
+.glow-blue {
+  box-shadow: 0 10px 30px rgba(11, 92, 158, 0.35);
+}
+
+/* Custom Animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(1deg);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes orbit {
+  0% {
+    transform: rotate(0deg) translateX(130px) rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg) translateX(130px) rotate(-360deg);
+  }
+}
+
+@keyframes orbit2 {
+  0% {
+    transform: rotate(180deg) translateX(170px) rotate(-180deg);
+  }
+  100% {
+    transform: rotate(540deg) translateX(170px) rotate(-540deg);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-float {
+  animation: float 5s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 4s ease-in-out infinite;
+}
+
+.animate-orbit {
+  animation: orbit 14s linear infinite;
+}
+
+.animate-orbit-reverse {
+  animation: orbit2 18s linear infinite;
+}
+
+/* Card Metodologia Hover Effects */
+.method-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.25rem;
+  transition: all 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.method-card .overlay-content {
+  transition: all 0.4s ease;
+  background: linear-gradient(180deg, rgba(7, 54, 96, 0.4) 0%, rgba(5, 36, 66, 0.95) 100%);
+}
+
+.method-card:hover .overlay-content {
+  background: linear-gradient(180deg, rgba(7, 54, 96, 0.85) 0%, rgba(5, 36, 66, 0.98) 100%);
+}
+
+.method-card:hover .card-img {
+  transform: scale(1.1);
+}
+
+.method-card .card-img {
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.method-card .extra-details {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.45s ease, opacity 0.35s ease;
+}
+
+.method-card:hover .extra-details {
+  max-height: 160px;
+  opacity: 1;
+}
+
+/* Scroll Fade In / Slide Up */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-on-scroll.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #073660;
+}
+::-webkit-scrollbar-thumb {
+  background: #0B5C9E;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #F5A623;
+}
+
+/* Video Player Custom Overlay */
+.video-wrapper {
+  position: relative;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  box-shadow: 0 25px 50px -12px rgba(7, 54, 96, 0.4);
+}
+
+.video-wrapper video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* WhatsApp Ripple Effect */
+.whatsapp-pulse {
+  position: relative;
+}
+
+.whatsapp-pulse::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #25D366;
+  transform: translate(-50%, -50%);
+  animation: pulse-ring 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+  z-index: -1;
+}
+
+/* Espaçamento Exclusivo entre Contato e o Botão Matrículas Abertas */
+#main-navbar nav a[href="#contato"] {
+  margin-right: 50px !important;
+}
+
+/* Botão CTA Header Matrículas Abertas */
+.header-cta-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 10px !important;
+  padding: 10px 22px !important;
+  white-space: nowrap !important;
+  flex-shrink: 0 !important;
+}
+
+.header-cta-btn i,
+.header-cta-btn svg {
+  margin-right: 0 !important;
+  width: 18px !important;
+  height: 18px !important;
+  min-width: 18px !important;
+  flex-shrink: 0 !important;
+}
