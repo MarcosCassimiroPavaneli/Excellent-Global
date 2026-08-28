@@ -136,7 +136,7 @@ Excellent-Global/
 
 ## ⚖️ Conformidade Jurídica
 
-* **Franquia**: Excellent Global Idiomas - Unidade Franqueada Osasco
+* **Unidade**: Excellent Global Idiomas - Unidade Osasco
 * **Localização**: Osasco e Região Metropolitana - SP
 * **Contato**: [excellentglobalosasco@gmail.com](mailto:excellentglobalosasco@gmail.com) | WhatsApp: [(11) 96871-1060](https://wa.me/5511968711060)
 * **Copyright**: © 2026 Excellent Global Idiomas - Unidade Osasco. Todos os direitos reservados.
