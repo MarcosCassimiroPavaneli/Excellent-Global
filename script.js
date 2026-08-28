@@ -197,6 +197,24 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // 4.1. Player de Vídeo Institucional Interativo
+  const videoWrapper = document.getElementById('video-wrapper');
+  const videoCoverOverlay = document.getElementById('video-cover-overlay');
+  const youtubePlayer = document.getElementById('youtube-player');
+
+  if (videoWrapper && videoCoverOverlay && youtubePlayer) {
+    videoWrapper.addEventListener('click', () => {
+      const dataSrc = youtubePlayer.getAttribute('data-src');
+      if (dataSrc && !youtubePlayer.getAttribute('src')) {
+        youtubePlayer.setAttribute('src', dataSrc);
+      }
+      videoCoverOverlay.classList.add('opacity-0', 'pointer-events-none');
+      setTimeout(() => {
+        videoCoverOverlay.style.display = 'none';
+      }, 400);
+    });
+  }
+
   // 5. Navbar Scroll Background Change
   const mainNavbar = document.getElementById('main-navbar');
   window.addEventListener('scroll', () => {

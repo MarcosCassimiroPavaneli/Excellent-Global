@@ -367,20 +367,33 @@
         </p>
       </div>
 
-      <!-- Video Container Native HTML5 com poster video-cover.png sem bordas -->
-      <div class="relative rounded-2xl shadow-2xl border-2 border-brand-gold/30 glow-gold reveal-on-scroll overflow-hidden bg-slate-900">
-        <video 
-          id="main-video"
-          controls 
-          preload="metadata" 
-          poster="video-cover.png?v=2"
-          playsinline
-          class="w-full rounded-2xl shadow-lg aspect-video object-cover"
-          style="width: 100%; border-radius: 16px; aspect-ratio: 16/9; object-fit: cover;"
-        >
-          <source src="yt1z.net-A-melhor-escola-de-idiomas-Excellent-Global-1080p-1.mp4" type="video/mp4">
-          Seu navegador não suporta a reprodução de vídeo.
-        </video>
+      <!-- Video Container Interativo com Capa Oficial e Player Integrado -->
+      <div id="video-wrapper" class="relative rounded-2xl shadow-2xl border-2 border-brand-gold/40 glow-gold reveal-on-scroll overflow-hidden bg-slate-950 aspect-video group cursor-pointer">
+        
+        <!-- Capa Oficial com Efeito Hover e Botão Play Dourado -->
+        <div id="video-cover-overlay" class="absolute inset-0 z-20 flex flex-col items-center justify-center bg-slate-950/40 backdrop-blur-[2px] transition-all duration-500 group-hover:bg-slate-950/20">
+          <img src="video-cover.png?v=2" alt="A melhor escola de idiomas - Excellent Global" class="absolute inset-0 w-full h-full object-cover -z-10 transition-transform duration-700 group-hover:scale-105">
+          
+          <button type="button" aria-label="Reproduzir Vídeo Institucional" class="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-gradient-to-tr from-brand-gold to-amber-400 text-brand-deep flex items-center justify-center shadow-2xl transform transition-all duration-300 group-hover:scale-110 glow-gold">
+            <i data-lucide="play" class="w-10 h-10 fill-brand-deep ml-1 text-brand-deep"></i>
+          </button>
+          
+          <span class="mt-4 text-white font-bold text-xs sm:text-sm tracking-wide bg-brand-deep/85 px-5 py-2 rounded-full border border-white/20 shadow-lg backdrop-blur-md">
+            ▶ Clique para Assistir ao Vídeo Explicativo
+          </span>
+        </div>
+
+        <!-- Player de Vídeo em Alta Resolução -->
+        <iframe 
+          id="youtube-player"
+          class="w-full h-full relative z-10"
+          src=""
+          data-src="https://www.youtube-nocookie.com/embed/videoseries?list=PL44d3Qj1b7z5U2b0jHn5K_0Q6_9b1g-kZ&autoplay=1"
+          title="Vídeo Institucional - Excellent Global Idiomas"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen>
+        </iframe>
       </div>
 
       <!-- Video Key Highlights -->
